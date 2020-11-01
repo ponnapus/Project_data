@@ -1,17 +1,17 @@
 # Project: Project1
 # Makefile created by Dev-C++ 5.11
 
-CPP      = g++.exe
-CC       = gcc.exe
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = main.o Installment.o Customer.o Employee.o Output.o node_customer.o node_card.o
-LINKOBJ  = main.o Installment.o Customer.o Employee.o Output.o node_customer.o node_card.o
-LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+OBJ      = main.o Installment.o Customer.o Employee.o Output.o node_card.o categori.o node_categori.o
+LINKOBJ  = main.o Installment.o Customer.o Employee.o Output.o node_card.o categori.o node_categori.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
 BIN      = Project1.exe
-CXXFLAGS = $(CXXINCS) 
-CFLAGS   = $(INCS) 
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
 RM       = rm.exe -f
 
 .PHONY: all all-before all-after clean clean-custom
@@ -39,8 +39,11 @@ Employee.o: Employee.cpp
 Output.o: Output.cpp
 	$(CPP) -c Output.cpp -o Output.o $(CXXFLAGS)
 
-node_customer.o: node_customer.cpp
-	$(CPP) -c node_customer.cpp -o node_customer.o $(CXXFLAGS)
-
 node_card.o: node_card.cpp
 	$(CPP) -c node_card.cpp -o node_card.o $(CXXFLAGS)
+
+categori.o: categori.cpp
+	$(CPP) -c categori.cpp -o categori.o $(CXXFLAGS)
+
+node_categori.o: node_categori.cpp
+	$(CPP) -c node_categori.cpp -o node_categori.o $(CXXFLAGS)
