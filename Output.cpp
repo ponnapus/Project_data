@@ -1,12 +1,12 @@
 #include "Output.h"
-#include <iostream>
-#include <string>
-#include<fstream>
-
-using namespace std;
+//#include <iostream>
+//#include <string>
+//#include<fstream>
+//
+//using namespace std;
 Output::Output()
 {
-	
+	count_c = obj.count;
 }
 
 
@@ -30,6 +30,8 @@ void Output::read_file(){
 
 void Output::show_category(){
 	
+	node_categori *temp = new node_categori();
+	//count = obj.count;
 	int sum;
 	cout << "\t=== CATEGORY ===" << endl;
 	cout << "\t1.Refrigerator " << endl;
@@ -38,29 +40,36 @@ void Output::show_category(){
 	cout << "\t4.Air Conditioner" << endl;
 	cout << "\t5.Laptop" << endl;
 	cout << "\t6.Water Heater" << endl;
-	cout << "\t7.Strainer" << endl;
-	cout << "\t8.Computer" << endl;
+	cout << "\t7.Speaker" << endl;
+	cout << "\t8.PC Desktop" << endl;
 	cout << "\t9.Vacum Cleaner" << endl;
 	cout << "\t10.Fan" << endl;
-	cout << "\t11. View Your Profile" << endl;
-	do{
-		
-		cout << "Please Enter category your want : " ;
-			cin>> sum;
-			
-	}while(sum<1||sum>11);
 	
-		switch(sum){
-			case 1:{
-				
-				break;
-			}
-			case 2:{
-				
-				break;
-			}
-		}
+}
+
+
+void Output::menu(){
+	
 	
 	
 }
 
+void Output::out_bank(){
+	string user;
+	string pass;
+	cout << " ============= For Banking =============" << endl;
+	cout << "Enter Username : ";//admin
+	cin >> user;
+	cout << "Enter Password : "; //admin
+	cin >> pass;
+	
+	if(user == "admin" && pass =="admin"){
+		p.bank();
+		//cus.write_card_data();
+		
+	}else{
+		cout << "Cannot Login !!!!!!!!!! " << endl;
+		cout << "=== Please Try Again ===" << endl;
+	}
+		
+}

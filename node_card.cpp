@@ -1,12 +1,11 @@
 #include "node_card.h"
-#include <iostream>
-#include <string>
-#include <sstream>
-#include <iomanip>
-#include "Customer.h"
-#include "Output.h"
-
-using namespace std;
+//#include <iostream>
+//#include <string>
+//#include <sstream>
+//#include <iomanip>
+//
+//
+//using namespace std;
 node_card::node_card()
 {
 	
@@ -16,7 +15,7 @@ node_card::node_card()
 		type_card = "";
 		num_card = "";
 		price_card = "";
-		day_end = "";
-		link = NULL;
-		
+		date = "";
+		next = NULL;
+			
 }

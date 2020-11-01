@@ -1,18 +1,26 @@
 #ifndef CLUSTOMER_H
 #define CLUSTOMER_H
-#include <iostream>
-#include <string>
-
-using namespace std;
-class Customer
-{
+#include "node_card.h"
+//#include <iostream>
+//#include <string>
+//#include <fstream>
+//
+//using namespace std;
+class Customer{
 	public:
-		string name,pass,count;
-		Customer();
-		void regis(string username,string password);
-		bool login(string username,string password);
-		bool checkname(string name);
+		string name,pass;
+		int count_c;
+		node_card *head_card;
+		node_card *tail_card;
 		
+		Customer();
+		int get_cus();
+		void bank();
+		void read_cus();
+		void check();
+		void show_c();
+		void add(string name,string card_id,string type_card,string name_bank,string price_card,string cvv,string date);
+		void write_card_data(string name,string name_b,string num,string type,string price,string cvv,string date);
 	protected:
 	
 };
